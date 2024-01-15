@@ -1,5 +1,4 @@
-<p>game-board works!</p>
-
-<div *ngFor="let game_player of game.players">
-  <p>{{ game_player.user.username}} <span *ngIf="player._id === game_player._id">Su turno</span></p>
+<div *ngFor="let game_player of game.players; let i = index" class="flex flex-col items-center">
+  <p [ngClass]="getPositionClass(i)">{{ game_player.user.username}} <span *ngIf="player._id === game_player._id">Su turno</span></p>
+  <button (click)="tirarDados()" *ngIf="player._id === game_player._id" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 p-2 bg-red-500 text-white rounded-full">Tirar</button>
 </div>
