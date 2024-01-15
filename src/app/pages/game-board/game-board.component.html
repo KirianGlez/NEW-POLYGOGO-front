@@ -1,0 +1,5 @@
+<p>game-board works!</p>
+
+<div *ngFor="let game_player of game.players">
+  <p>{{ game_player.user.username}} <span *ngIf="player._id === game_player._id">Su turno</span></p>
+</div>
