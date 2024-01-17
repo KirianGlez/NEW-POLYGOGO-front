@@ -4,6 +4,8 @@ import { Game } from '../../game/models/game.model';
 import { GameService } from '../../game/game.service';
 import { Router } from '@angular/router';
 import { Player } from '../../game/models/player.model';
+import { Subject, interval } from 'rxjs';
+import { take, takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-game-board',
@@ -14,12 +16,25 @@ export class GameBoardComponent {
   public game!: Game;
   public player!: Player;
   private gameService: GameService;
+  private destroy$ = new Subject<void>();
 
   constructor(gameService: GameService, private router: Router) {
     this.gameService = gameService;
-    gameService.checkInGame().subscribe((data) => {
+    this.recargarDatos();
+    interval(5000)
+      .pipe(
+        takeUntil(this.destroy$) // Se detendrá cuando se destruya el componente
+      )
+      .subscribe(() => {
+        this.recargarDatos();
+      });
+  }
+
+  recargarDatos() {
+    this.gameService.checkInGame().subscribe((data) => {
       this.game = data.game;
       this.player = data.player;
+      console.log(data);
       if (data.message == false) {
         this.router.navigate(['/home']);
       }
@@ -50,7 +65,13 @@ export class GameBoardComponent {
 
   tirarDados() {
     this.gameService.rollDice().subscribe((data) => {
-      console.log(data);
+      this.recargarDatos();
+    });
+  }
+
+  pasarTurno() {
+    this.gameService.nextTurn().subscribe((data) => {
+      this.recargarDatos();
     });
   }
 }

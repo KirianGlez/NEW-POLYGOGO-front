@@ -38,4 +38,13 @@ export class GameService {
     const headers = new HttpHeaders().set('Authorization', token);
     return this.http.get<any>(`${this.apiUrl}/game/roll-dice`, { headers });
   }
+
+  nextTurn(): Observable<any> {
+    const token = this.authService.getToken();
+    if (!token) {
+      return of(null);
+    }
+    const headers = new HttpHeaders().set('Authorization', token);
+    return this.http.get<any>(`${this.apiUrl}/game/next-turn`, { headers });
+  }
 }

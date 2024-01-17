@@ -6,6 +6,8 @@ export class Player {
     public user: User,
     public game: string,
     public money: number = 0,
-    public position: number = 0
+    public position: number = 0,
+    public playing: boolean = false,
+    public dice: number = 0
   ) {}
 }
