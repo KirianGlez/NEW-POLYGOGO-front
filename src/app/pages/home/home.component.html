@@ -11,7 +11,7 @@
     <div class="bg-green-500 h-64 mb-4 rounded-lg">
       <!-- Contenido del tablero (imagen, texto, etc.) -->
     </div>
-    <button class="w-full bg-blue-500 text-white py-2 rounded">GO</button>
+    <button class="w-full bg-blue-500 text-white py-2 rounded" (click)="buscarPartida()">GO!</button>
   </div>
 
   <!-- Columna Derecha - Botones, Imagen de Perfil, Tablas -->
@@ -23,7 +23,7 @@
         <!-- Cuadrado como imagen de perfil -->
       </div>
       <button class="w-full bg-indigo-500 text-white py-2 rounded mb-2">BAG</button>
-      <button class="w-full bg-red-500 text-white py-2 rounded">LOGOUT</button>
+      <button class="w-full bg-red-500 text-white py-2 rounded" (click)="onLogoutClick()">LOGOUT</button>
     </div>
 
     <!-- Segunda Parte: Tabla Battle Pass -->
