@@ -1,8 +1,93 @@
-<div>
-  <!-- Contenido de tu componente Home -->
-  <h1>Bienvenido a la página de inicio</h1>
-  <button (click)="buscarPartida()">Buscar Partida</button>
-  
-  <!-- Botón de logout -->
-  <button (click)="onLogoutClick()">Cerrar sesión</button>
+<div class="flex h-screen">
+
+  <!-- Columna Izquierda - Amigos -->
+  <div class="w-1/4 bg-gray-200 p-4 rounded m-4">
+    <h2 class="text-xl font-semibold mb-4">FRIENDS</h2>
+    <!-- Aquí puedes colocar la lista de amigos -->
+  </div>
+
+  <!-- Columna Central - Tablero, Botón GO -->
+  <div class="w-1/2 bg-white p-8">
+    <div class="bg-green-500 h-64 mb-4 rounded-lg">
+      <!-- Contenido del tablero (imagen, texto, etc.) -->
+    </div>
+    <button class="w-full bg-blue-500 text-white py-2 rounded">GO</button>
+  </div>
+
+  <!-- Columna Derecha - Botones, Imagen de Perfil, Tablas -->
+  <div class="w-1/4 bg-gray-200 p-4 m-4">
+
+    <!-- Primera Parte: Botones y Cuadrado de Imagen de Perfil -->
+    <div class="mb-4">
+      <div class="bg-blue-500 h-16 w-16A mb-4 rounded-full">
+        <!-- Cuadrado como imagen de perfil -->
+      </div>
+      <button class="w-full bg-indigo-500 text-white py-2 rounded mb-2">BAG</button>
+      <button class="w-full bg-red-500 text-white py-2 rounded">LOGOUT</button>
+    </div>
+
+    <!-- Segunda Parte: Tabla Battle Pass -->
+    <div class="mb-4">
+      <h3 class="text-lg font-semibold mb-2">Battle Pass</h3>
+      <!-- Battle Pass Table -->
+<table class="w-full border-collapse border border-gray-300">
+  <thead>
+    <tr>
+      <th class="py-2 px-4 border-b">Nivel</th>
+      <th class="py-2 px-4 border-b">Recompensas</th>
+      <th class="py-2 px-4 border-b">Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Fila 1 -->
+    <tr>
+      <td class="py-2 px-4 border-b">1</td>
+      <td class="py-2 px-4 border-b">Skin</td>
+      <td class="py-2 px-4 border-b">Completado</td>
+    </tr>
+    <!-- Fila 2 -->
+    <tr>
+      <td class="py-2 px-4 border-b">2</td>
+      <td class="py-2 px-4 border-b">Emote</td>
+      <td class="py-2 px-4 border-b">Pendiente</td>
+    </tr>
+    <!-- ... Puedes agregar más filas según sea necesario -->
+  </tbody>
+</table>
+
+    </div>
+
+    <!-- Tercera Parte: Tabla Shop -->
+    <div>
+      <h3 class="text-lg font-semibold mb-2">Shop</h3>
+      <!-- Shop Table -->
+<table class="w-full border-collapse border border-gray-300">
+  <thead>
+    <tr>
+      <th class="py-2 px-4 border-b">Producto</th>
+      <th class="py-2 px-4 border-b">Precio</th>
+      <th class="py-2 px-4 border-b">Disponibilidad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Fila 1 -->
+    <tr>
+      <td class="py-2 px-4 border-b">Skin Épica</td>
+      <td class="py-2 px-4 border-b">$20</td>
+      <td class="py-2 px-4 border-b">Disponible</td>
+    </tr>
+    <!-- Fila 2 -->
+    <tr>
+      <td class="py-2 px-4 border-b">Emote Raro</td>
+      <td class="py-2 px-4 border-b">$10</td>
+      <td class="py-2 px-4 border-b">Agotado</td>
+    </tr>
+    <!-- ... Puedes agregar más filas según sea necesario -->
+  </tbody>
+</table>
+
+    </div>
+
+  </div>
+
 </div>
