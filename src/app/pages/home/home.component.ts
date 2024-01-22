@@ -28,6 +28,10 @@ export class HomeComponent implements OnDestroy {
     this.router.navigate(['/login']); // Redirige a la página de login
   }
 
+  toShop(){
+    this.router.navigate(['/store']);
+  }
+
   buscarPartida() {
     this.gameService.searchGame().subscribe(
       (response) => {

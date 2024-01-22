@@ -5,6 +5,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AuthGuard } from './auth/auth.guard';
 import { GameBoardComponent } from './pages/game-board/game-board.component';
+import { StoreComponent } from './pages/store/store.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Redirige al login por defecto
@@ -16,6 +17,7 @@ const routes: Routes = [
     component: GameBoardComponent,
     canActivate: [AuthGuard],
   },
+  { path: 'store', component: StoreComponent },
 ];
 
 @NgModule({

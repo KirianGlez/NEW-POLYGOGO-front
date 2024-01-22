@@ -1,0 +1,13 @@
+<div class="text-center">
+    <h1 class="text-4xl font-bold mb-8">STORE</h1>
+  </div>
+
+<div *ngFor="let skin of skins">
+    <div class="skin-item">
+      <img [src]="skin.image" alt="{{ skin.name }}">
+      <h3>{{ skin.name }}</h3>
+      <p>Tipo: {{ skin.type }}</p>
+      <p>Precio: {{ skin.price }}</p>
+      <button (click)="comprarSkin(user.id, skin.id)">Comprar</button>
+    </div>
+  </div>
