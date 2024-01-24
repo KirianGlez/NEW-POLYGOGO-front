@@ -18,7 +18,7 @@ export class StoreService {
       return of(null); // Retorna un Observable con valor null si no hay token
     }
     const headers = new HttpHeaders().set('Authorization', token);
-    return this.http.get<Skin[]>(`${this.apiUrl}/skins`, { headers });
+    return this.http.get<Skin[]>(`${this.apiUrl}/skin/skins`, { headers });
   }
 
   comprarSkin(userId: string, skinId: string): Observable<any> {
