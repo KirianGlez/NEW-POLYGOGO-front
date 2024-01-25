@@ -1,0 +1,11 @@
+<div class="xl:h-screen aspect-square p-4">
+  <!-- Contenido del div -->
+  <div class="text-center h-full bg-red-300 rounded-xl tablero">
+    <div class="grid grid-cols-8 grid-rows-8 h-full">
+      <ng-container *ngFor="let box of getOrderedBoxes()">
+        <div class="flex items-center justify-center" [style.background-color]="'#' +box.group">{{ box.title }}</div>
+        <div class="col-span-6 row-span-6 bg-blue-500 flex items-center justify-center" *ngIf="box.id === '6'">POLYGOGO</div>
+      </ng-container>
+    </div>
+  </div>
+</div>

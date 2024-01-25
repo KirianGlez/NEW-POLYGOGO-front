@@ -10,6 +10,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { HomeComponent } from './pages/home/home.component';
 import { GameBoardComponent } from './pages/game-board/game-board.component';
+import { BoardComponent } from './game/board/board.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { GameBoardComponent } from './pages/game-board/game-board.component';
     RegisterComponent,
     HomeComponent,
     GameBoardComponent,
+    BoardComponent,
   ],
   imports: [
     BrowserModule,

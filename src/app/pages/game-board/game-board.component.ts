@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Game } from '../../game/models/game.model';
 import { GameService } from '../../game/game.service';
 import { Router } from '@angular/router';
 import { Player } from '../../game/models/player.model';
 import { Subject, interval } from 'rxjs';
-import { take, takeUntil } from 'rxjs/operators';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-game-board',

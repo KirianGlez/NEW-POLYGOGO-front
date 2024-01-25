@@ -3,3 +3,8 @@
   <button (click)="tirarDados()" *ngIf="player._id === game.turn && !player.playing" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 p-2 bg-red-500 text-white rounded-full">Tirar</button>
   <button (click)="pasarTurno()" *ngIf="player._id === game.turn && player.playing" class="fixed bottom-20 left-1/2 transform -translate-x-1/2 p-2 bg-blue-500 text-white rounded-full">Pasar turno</button>
 </div>
+
+
+<div class="flex items-center justify-center h-screen w-screen bg-slate-100">
+      <app-board [board]="game.board"></app-board>
+</div>
